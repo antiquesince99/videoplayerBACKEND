@@ -1,14 +1,11 @@
-const mongoose = require('../connection')
+const mongoose = require("../connection");
 const schema = new mongoose.Schema({
-    Artist: String,
-    title: String,
-    description: String,
-    created: Date,
-    profileImg: {
-        type: String
-    }
-})
-  
+  title: String,
+  description: String,
+  created: { type: Date, default: new Date() },
+  file: String,
+  thumbnail: String,
+});
 
-const model = mongoose.model('Videos' , schema);
-module.exports = model
+const model = mongoose.model("Videos", schema);
+module.exports = model;
